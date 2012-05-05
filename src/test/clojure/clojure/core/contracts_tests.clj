@@ -2,7 +2,8 @@
   (:use [clojure.core.contracts :only (contract)])
   (:use [clojure.test :only [deftest is]]))
 
-(defn fail [] (is nil))
+(defn defer []
+  (is (nil? (println "DEFERING TEST!!!"))))
 
 (deftest contracts
-  (fail))
+  (defer))

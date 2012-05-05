@@ -29,6 +29,14 @@
     </developer>
   </developers>
 
+  <dependencies>
+    <dependency>
+      <groupId>org.clojure</groupId>
+      <artifactId>core.unify</artifactId>
+      <version>0.5.2</version>
+    </dependency>
+  </dependencies>
+
   <scm>
     <connection>scm:git:git://github.com/clojure/core.contracts.git</connection>
     <url>http://github.com/clojure/core.contracts</url>
