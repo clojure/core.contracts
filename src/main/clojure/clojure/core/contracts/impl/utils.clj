@@ -1,34 +1,14 @@
 (ns clojure.core.contracts.impl.utils
   (:require [clojure.core.unify :as unify]))
 
-
-(defn build-condition-body
-  [p body prefix-msg]
-  (unify/subst
-   {'?P      p
-    '?PREFIX prefix-msg
-    '?BODY   body}
-   
-   '(try
-      ((fn [] {?P ?PRE}
-         ?BODY))
-      (catch AssertionError ae
-        (throw (AssertionError. (str ?PREFIX ?MSG \newline (.getMessage ae))))))))
+(defn keys-apply [f ks m]
+  (let [only (select-keys m ks)]
+    (zipmap (keys only) (map f (vals only)))))
 
 
-(defn- build-pre-post-map
-  [cnstr]
-  (if (vector? cnstr)
-    (let [[L M R] (partition-by #{'=>} cnstr)]
-      {:pre  (vec (when (not= L '(=>)) L))
-       :post (vec (if (= L '(=>)) M R))})
-    cnstr))
+(defn manip-map [f ks m]
+  (conj m (keys-apply f ks m)))
 
-(comment
-
-  (build-pre-post-map '[(odd? n) (pos? n) => (int? %)])
-  
-)
 
 (defmacro ^:private assert-w-message
   [check message]
