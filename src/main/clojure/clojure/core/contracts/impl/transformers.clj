@@ -1,4 +1,5 @@
 (ns clojure.core.contracts.impl.transformers
+  (:use [clojure.core.contracts.impl.funcify :only (funcify)])
   (:require [clojure.core.unify :as unify]
             [clojure.core.contracts.impl.utils :as utils]))
 
@@ -36,4 +37,30 @@
            (list 'fn? (second form))
            form))
        cnstr))
+
+(defn- build-constraints-map
+  [args cnstr]
+  (let [cnstr (vec (tag-hocs cnstr))]
+    [args
+     (->> (build-pre-post-map cnstr)
+          (utils/manip-map (partial funcify '[%]) [:post])
+          (utils/manip-map (partial funcify args) [:pre]))]))
+
+
+(defn build-contract-body
+  [args cnstr descr]
+  (let [c (build-constraints-map args cnstr)]
+    (unify/subst
+     {'?ARGS       args
+      '?F          'f
+      '?PARMS      (vec (list* 'f args))
+      '?PRE        (:pre c)
+      '?POST       (:post c)
+      '?MSG        descr
+      '?PRE-CHECK  (build-condition-body :pre  '(apply ?F ?ARGS) "Pre-condition failure: ")
+      '?POST-CHECK (build-condition-body :post 'ret "Post-condition failure: ")}
+     
+     '(?PARMS
+       (let [ret ?PRE-CHECK]
+         ?POST-CHECK)))))
 
