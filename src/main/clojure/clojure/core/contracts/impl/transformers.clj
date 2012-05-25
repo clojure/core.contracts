@@ -4,29 +4,16 @@
             [clojure.core.contracts.impl.utils :as utils]))
 
 
-(defn build-condition-body
-  [p body prefix-msg]
-  (unify/subst
-   {'?P      p
-    '?PREFIX prefix-msg
-    '?BODY   body}
-   
-   '(try
-      ((fn [] {?P ?PRE}
-         ?BODY))
-      (catch AssertionError ae
-        (throw (AssertionError. (str ?PREFIX ?MSG \newline (.getMessage ae))))))))
-
-
-(defn- build-pre-post-map
-  "(build-pre-post-map '[(odd? n) (pos? n) => (int? %)])
-   ;=> {:pre [...] :post [...]}
+(defn- divide-pre-post
+  "'[odd? pos? => int?]
+     =>
+   {:pre (odd? pos?) :post (int?)}
   "
   [cnstr]
   (if (vector? cnstr)
     (let [[L M R] (partition-by #{'=>} cnstr)]
-      {:pre  (vec (when (not= L '(=>)) L))
-       :post (vec (if (= L '(=>)) M R))})
+      {:pre  (when (not= L '(=>)) L)
+       :post (if (= L '(=>)) M R)})
     cnstr))
 
 
@@ -38,29 +25,58 @@
            form))
        cnstr))
 
-(defn- build-constraints-map
-  [args cnstr]
+(defn- build-constraints-description
+  "'[n] '[odd? pos? => int?] \"foo\"
+     =>
+    [[n] {:pre [(pos? n) (int? n)], :post [(neg? %)]} \"foo\"]"
+  [args cnstr docstring]
   (let [cnstr (vec (tag-hocs cnstr))]
     [args
-     (->> (build-pre-post-map cnstr)
+     (->> (divide-pre-post cnstr)
           (utils/manip-map (partial funcify '[%]) [:post])
-          (utils/manip-map (partial funcify args) [:pre]))]))
+          (utils/manip-map (partial funcify args) [:pre]))
+     docstring]))
 
+(defn- build-condition-body
+  [constraint-map body prefix-msg]
+  (unify/subst
+   '(try
+      ((fn []
+         ?CNSTR
+         ?BODY))
+      (catch AssertionError ae
+        (throw (AssertionError. (str ?PREFIX ?MSG \newline (.getMessage ae))))))
 
-(defn build-contract-body
-  [args cnstr descr]
-  (let [c (build-constraints-map args cnstr)]
-    (unify/subst
-     {'?ARGS       args
-      '?F          'f
-      '?PARMS      (vec (list* 'f args))
-      '?PRE        (:pre c)
-      '?POST       (:post c)
-      '?MSG        descr
-      '?PRE-CHECK  (build-condition-body :pre  '(apply ?F ?ARGS) "Pre-condition failure: ")
-      '?POST-CHECK (build-condition-body :post 'ret "Post-condition failure: ")}
-     
-     '(?PARMS
-       (let [ret ?PRE-CHECK]
-         ?POST-CHECK)))))
+   {'?CNSTR  constraint-map
+    '?PREFIX prefix-msg
+    '?BODY   body}))
 
+(defn- build-contract-body
+  [[args cnstr descr :as V]]
+  (unify/subst     
+   '(?PARMS
+     (let [ret ?PRE-CHECK]
+       ?POST-CHECK))
+
+   {'?ARGS       args
+    '?F          'f
+    '?PARMS      (vec (list* 'f args))
+    '?MSG        descr
+    '?PRE-CHECK  (build-condition-body {:pre (:pre cnstr)}   '(apply ?F ?ARGS) "Pre-condition failure: ")
+    '?POST-CHECK (build-condition-body {:post (:post cnstr)} 'ret "Post-condition failure: ")}))
+
+(defn- build-contract-bodies
+  [constraint-descriptions]
+  (for [cnstr constraint-descriptions]
+    (build-contract-body cnstr)))
+
+;; # Public API
+
+(defn build-contract-fn-body
+  [name docstring raw-constraints]
+  (let [raw-cnstr   (partition 2 raw-constraints)
+        cnstr-descrs (for [[a c] raw-cnstr]
+                       (build-constraints-description a c docstring))] ;; needs work
+    (->> cnstr-descrs
+         build-contract-bodies
+         (list* `fn name))))
