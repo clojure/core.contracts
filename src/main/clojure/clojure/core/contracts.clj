@@ -1,10 +1,11 @@
 (ns clojure.core.contracts
   "The public contracts programming functions and macros for clojure.core.contracts."
-  (:use [clojure.core.contracts.impl.transformers :only (build-contract-fn-body)]))
+  (:use [clojure.core.contracts.impl.transformers :only (build-contract-fn-body)])
+  (:require [clojure.core.contracts.impl.utils :as tools]))
 
 (defmacro contract
   [name docstring & constraints]
-  (assert (string? docstring) "Sorry, but contracts require docstrings")
+  (tools/assert-w-message (string? docstring) "Sorry, but contracts require docstrings")
   
   `(with-meta 
      ~(build-contract-fn-body name docstring constraints)

@@ -10,10 +10,10 @@
   (conj m (keys-apply f ks m)))
 
 
-(defmacro ^:private assert-w-message
+(defmacro assert-w-message
   [check message]
   `(when-not ~check
-     (throw (new AssertionError (str "Trammel assertion failed: " ~message "\n"
+     (throw (new AssertionError (str "Assertion failure: " ~message "\n"
                                      (pr-str '~check))))))
 
 (defn check-args!
