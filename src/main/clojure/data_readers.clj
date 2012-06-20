@@ -1,4 +1,5 @@
-{;contract   clojure.core.contracts.impl.readers/read-constraints
- ;fun        clojure.core/identity
- ;iinvariants clojure.core/identity
-}
+{
+ ;cc/contract   clojure.core.contracts.impl.readers/read-constraints
+ ;cc/fun        clojure.core/identity
+ ;cc/invariants clojure.core/identity
+ }
