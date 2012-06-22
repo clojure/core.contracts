@@ -1,6 +1,6 @@
 (defproject core.contracts "0.0.1"
   :description "Contracts programming for Clojure."
-  :dependencies [[org.clojure/clojure "1.5.0-alpha1"]
+  :dependencies [[org.clojure/clojure "1.5.0-master-SNAPSHOT"]
                  [org.clojure/core.unify "0.5.3"]]
   :dev-dependencies [[lein-clojars "0.5.0-SNAPSHOT"]
                      [jline "0.9.94"]
