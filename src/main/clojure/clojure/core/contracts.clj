@@ -38,28 +38,3 @@
            (list `alter-var-root (list `var n#)
                  (list `fn '[f c] (list `with-constraints 'f 'c)) c#))
        nil)))
-
-(comment
-  (def doubler-contract
-    (contract doubler
-      "ensures dublig"
-      [x] [number? => (= (* 2 x) %)]
-
-      [x y] [(every? number? [x y])
-             =>
-             (= (* 2 (+ x y)) %)]))
-
-  (def x2 (fn f
-            ([n] (* 2 n))
-            ([n x] (+ (f n) (f x)))))
-  
-  (def doubler (partial doubler-contract x2))
-
-  (doubler 2)
-  (doubler 2 3)
-
-  (def bad-doubler (partial doubler-contract (comp dec x2)))
-
-  (bad-doubler 2)
-  (bad-doubler 2 3)
-)
