@@ -80,3 +80,4 @@
     (->> cnstr-descrs
          build-contract-bodies
          (list* `fn name))))
+

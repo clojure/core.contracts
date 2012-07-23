@@ -12,6 +12,13 @@
      {:docstring ~docstring
       ::constraints :TBD}))
 
+(defmacro _
+  [a b & body]
+  (let [name (if (symbol? a) a (gensym "hoc"))
+        args (if (symbol? a) b a)
+        body (if (symbol? a) body (list* b body))]
+    `(contract ~name "TBD" ~args ~(vec body))))
+
 (defn with-constraints
   "A contract combinator.
 
