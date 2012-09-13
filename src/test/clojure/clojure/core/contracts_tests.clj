@@ -27,11 +27,5 @@
     (is (thrown? AssertionError (bad-doubler 2)))
     (is (thrown? AssertionError (bad-doubler 2 3)))))
 
-(deftest test-with-constraints
-  (defer "with-constraints"))
-
-(deftest test-provide
-  (defer "provide"))
-
 (deftest test-regressions
   (defer "regression testing"))

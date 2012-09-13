@@ -37,7 +37,7 @@
   [& kontracts]
   (let [fn-names  (map first kontracts)
         kontracts (for [[n ds & more] kontracts]
-                    (if (list? (first more))
+                    (if (vector? (first more))
                       (list* `contract n ds more)
                       (first more)))]
     `(do
