@@ -1,5 +1,6 @@
 (ns clojure.core.contracts
   "The public contracts programming functions and macros for clojure.core.contracts."
+  (:refer-clojure :exclude [== = not=])
   (:use [clojure.core.contracts.impl.transformers :only (build-contract-fn-body)])
   (:require [clojure.core.contracts.impl.utils :as tools]))
 
@@ -45,3 +46,7 @@
            (list `alter-var-root (list `var n#)
                  (list `fn '[f c] (list `with-constraints 'f 'c)) c#))
        nil)))
+
+(tools/defcurry-all clojure.core
+  == = not=)
+

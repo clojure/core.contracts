@@ -1,6 +1,6 @@
 (ns clojure.core.contracts-tests
-  (:use [clojure.core.contracts :only (contract with-constraints provide)]
-        [clojure.test :only [deftest is]]
+  (:require [clojure.core.contracts :as c :refer (contract)])
+  (:use [clojure.test :only [deftest is]]
         clojure.core.contracts.impl.transformers))
 
 (defn defer [desc]

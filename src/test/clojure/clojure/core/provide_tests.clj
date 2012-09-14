@@ -18,6 +18,12 @@
   (is (= 25 (sqr -5)))
   (is (thrown? AssertionError (sqr 0))))
 
+(comment
+
+  (sqr 0)
+
+)
+
 
 ;; # Contract name use
 

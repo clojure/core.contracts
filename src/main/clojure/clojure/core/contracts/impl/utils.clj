@@ -25,3 +25,49 @@
                          "[pre-conditions => post-conditions] or "
                          "{:pre [pre-conditions]}"
                          "for record type " name)))
+
+;; Currying
+
+(defn do-curried
+  [name doc meta args body]
+  (let [cargs (vec (butlast args))]
+    `(defn ~name ~doc ~meta
+       (~cargs (fn [x#] (~name ~@cargs x#)))
+       (~args ~@body))))
+
+(defmacro defcurried
+  "Builds another arity of the fn that returns a fn awaiting the last
+  param"
+  [name doc meta args & body]
+  (do-curried name doc meta args body))
+
+(defmacro defcurry-all
+  "Builds a pass-through curried fn for each name."
+  [namespace & names]
+  (->> (for [n names]
+         (let [v (ns-resolve namespace n)]
+           `(defcurried ~n
+              ~(str "Curried version of " v)
+              {:clojure.core.contracts/original ~v}
+              [l# r#]
+              (~v l# r#))))
+       (cons `do)))
+
+(comment
+  (macroexpand
+   '(defcurry-all clojure.core
+      == =))
+
+  
+
+  ((== 1) 1)
+  
+  (defcurried ===
+    "test"
+    {:added "1.5"}
+    [l r]
+    (== l r))
+
+  ((=== 1) 2)
+
+)
