@@ -1,6 +1,6 @@
 (ns clojure.core.provide-tests
-  (:require [clojure.core.contracts :as contracts :refer (contract)])
-  (:use [clojure.test :only (deftest is)]))
+  (:use [clojure.test :only (deftest is)]
+        [clojure.core.contracts :as contracts]))
 
 ;; # Inline contract syntax
 
