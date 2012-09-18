@@ -1,7 +1,7 @@
 (ns clojure.core.contracts-tests
-  (:require [clojure.core.contracts :as c :refer (contract)])
   (:use [clojure.test :only [deftest is]]
-        clojure.core.contracts.impl.transformers))
+        clojure.core.contracts.impl.transformers
+        clojure.core.contracts))
 
 (defn defer [desc]
   (is (nil? (println (str "DEFERING TEST: " desc)))))
