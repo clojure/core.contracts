@@ -66,7 +66,7 @@ Developer Information
 
 * [Compatibility Test Matrix](http://build.clojure.org/job/core.contracts-test-matrix/)
 
-
+* [References](https://github.com/clojure/core.contracts/blob/master/References.md)
 
 Change Log
 ====================

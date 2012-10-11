@@ -45,3 +45,13 @@
            (list `alter-var-root (list `var n#)
                  (list `fn '[f c] (list `with-constraints 'f 'c)) c#))
        nil)))
+
+(defmacro require-with-constraints
+  [name inv-description invariants]
+  `(do
+     (require ~(quote name))
+     (set-validator! (var ~name) (partial (contract ~(symbol (str "chk-" name))
+                                            ~inv-description
+                                            [~name]
+                                            ~invariants)
+                                          (fn [x#] true)))))
