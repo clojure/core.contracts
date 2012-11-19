@@ -53,17 +53,32 @@
 
 (defn- build-contract-body
   [[args cnstr descr :as V]]
-  (unify/subst     
-   '(?PARMS
-     (let [ret ?PRE-CHECK]
-       ?POST-CHECK))
+  (let [vargs? #{'&}
+        prep-args (if (some vargs? args)
+                    (with-meta
+                      (->> args (remove vargs?) vec)
+                      {::vargs true})
+                    args)
+        callsite (if (::vargs (meta prep-args))
+                   (list* `apply '?F prep-args)
+                   '(apply ?F ?ARGS))]
+    (unify/subst
+     '(?PARMS
+       (let [ret ?PRE-CHECK]
+         ?POST-CHECK))
 
-   {'?ARGS       args
-    '?F          'f
-    '?PARMS      (vec (list* 'f args))
-    '?MSG        descr
-    '?PRE-CHECK  (build-condition-body {:pre (:pre cnstr)}   '(apply ?F ?ARGS) "Pre-condition failure: ")
-    '?POST-CHECK (build-condition-body {:post (:post cnstr)} 'ret "Post-condition failure: ")}))
+     {'?ARGS       prep-args
+      '?F          'f
+      '?PARMS      (vec (list* 'f args))
+      '?MSG        descr
+      '?PRE-CHECK  (build-condition-body
+                    {:pre (:pre cnstr)}
+                    callsite
+                    "Pre-condition failure: ")
+      '?POST-CHECK (build-condition-body
+                    {:post (:post cnstr)}
+                    'ret
+                    "Post-condition failure: ")})))
 
 (defn- build-contract-bodies
   [constraint-descriptions]
