@@ -1,5 +1,5 @@
 (ns clojure.core.contracts.impl.transformers
-  (:use [clojure.core.contracts.impl.funcify :only (funcify)])
+  (:require [clojure.core.contracts.impl.funcify :refer (funcify) :as funcification])
   (:require [clojure.core.unify :as unify]
             [clojure.core.contracts.impl.utils :as utils]))
 
@@ -16,14 +16,27 @@
        :post (if (= L '(=>)) M R)})
     cnstr))
 
+;; HoC support
+
+(declare build-constraints-description)
+
+(defrecord Hoc [field desc])
+
+(defmethod funcification/funcify* Hoc [e args] e)
+
+(def hoc? #(isa? Hoc %))
 
 (defn- tag-hocs
   [cnstr]
-  (map (fn [form]
-         (if (and (seq? form) (= '_ (first form)))
-           (list 'fn? (second form))
-           form))
-       cnstr))
+  (let [ret
+        (mapcat (fn [form]
+                  (if (and (seq? form) (= '_ (first form)))
+                    [(list 'fn? (second form))
+                     (->Hoc (second form)
+                            (apply build-constraints-description (-> form nnext vec (conj "foo"))))]
+                    [form]))
+             cnstr)]
+    ret))
 
 (defn- build-constraints-description
   "'[n] '[odd? pos? => int?] \"foo\"
@@ -51,6 +64,15 @@
     '?PREFIX prefix-msg
     '?BODY   body}))
 
+(comment
+
+  (build-constraints-description '[n] '[odd? pos? => int?] "foo")
+  (build-constraints-description '[f n] '[(pos? n) (_ f [n] [number?]) => int?] "foo")
+
+  (build-contract-body '[[f n] [number? (_ f [n] [odd?]) => pos?] "foo"])
+  (build-contract-body '[[n] [number? => odd?] "foo"])
+)
+
 (defn- build-contract-body
   [[args cnstr descr :as V]]
   (let [vargs? #{'&}
@@ -61,15 +83,16 @@
                     args)
         callsite (if (::vargs (meta prep-args))
                    (list* `apply '?F prep-args)
-                   '(apply ?F ?ARGS))]
+                   '(apply ?F ?ARGS))
+        fun-name (gensym "fun")]
     (unify/subst
      '(?PARMS
        (let [ret ?PRE-CHECK]
          ?POST-CHECK))
 
      {'?ARGS       prep-args
-      '?F          'f
-      '?PARMS      (vec (list* 'f args))
+      '?F          fun-name
+      '?PARMS      (vec (list* fun-name args))
       '?MSG        descr
       '?PRE-CHECK  (build-condition-body
                     {:pre (:pre cnstr)}
@@ -95,4 +118,3 @@
     (->> cnstr-descrs
          build-contract-bodies
          (list* `fn name))))
-
