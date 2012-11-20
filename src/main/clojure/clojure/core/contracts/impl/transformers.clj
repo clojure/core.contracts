@@ -1,5 +1,5 @@
 (ns clojure.core.contracts.impl.transformers
-  (:require [clojure.core.contracts.impl.funcify :refer (funcify) :as funcification])
+  (:require [clojure.core.contracts.impl.funcify :as funcification])
   (:require [clojure.core.unify :as unify]
             [clojure.core.contracts.impl.utils :as utils]))
 
@@ -32,8 +32,8 @@
         (mapcat (fn [form]
                   (if (and (seq? form) (= '_ (first form)))
                     [(list 'fn? (second form))
-                     (->Hoc (second form)
-                            (apply build-constraints-description (-> form nnext vec (conj "foo"))))]
+                     (Hoc. (second form)
+                           (apply build-constraints-description (-> form nnext vec (conj "foo"))))]
                     [form]))
              cnstr)]
     ret))
@@ -46,8 +46,8 @@
   (let [cnstr (vec (tag-hocs cnstr))]
     [args
      (->> (divide-pre-post cnstr)
-          (utils/manip-map (partial funcify '[%]) [:post])
-          (utils/manip-map (partial funcify args) [:pre]))
+          (utils/manip-map (partial funcification/funcify '[%]) [:post])
+          (utils/manip-map (partial funcification/funcify args) [:pre]))
      docstring]))
 
 (defn- build-condition-body
