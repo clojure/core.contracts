@@ -19,6 +19,26 @@
         body (if (symbol? a) body (list* b body))]
     `(contract ~name "TBD" ~args ~(vec body))))
 
+(comment
+
+  (def C
+    (contract
+     foo
+     "bar"
+     [f n]
+     [(integer? n)
+      (_ f [n] [odd?])
+      =>
+      integer?]))
+
+  (def foo (with-constraints
+             (fn [f n] (+ (f n) n))
+             C))
+
+  (foo #(* 2 %) 11)
+  
+)
+
 (defn with-constraints
   "A contract combinator.
 

@@ -18,7 +18,8 @@
 
 ;; HoC support
 
-(declare build-constraints-description)
+(declare build-constraints-description
+         build-contract-body)
 
 (defrecord Hoc [field desc])
 
@@ -65,31 +66,41 @@
     '?BODY   body}))
 
 (comment
- 
+
   (build-contract-body
    (build-constraints-description '[f n] '[number? (_ f [n] [odd?]) => pos?] "foo"))
   
   (build-contract-body
    (build-constraints-description '[n] '[number? => odd?] "foo"))
 
+
+  (prepare-args '[f b c] '{f {:desc [[n] {:pre [(odd? n)], :post []} "bar"]}})
 )
+
+(defn prepare-args [args hocs]
+  (let [vargs? #{'&}
+        has-vargs (boolean (some vargs? args))]
+    (with-meta 
+      (vec
+       (map (fn [arg]
+              (if-let [hoc (get hocs arg)]
+                (list `partial (list* `fn (build-contract-body (:desc hoc))) arg)
+                arg))
+            (->> args (remove vargs?))))
+      {::vargs has-vargs})))
 
 (defn- build-contract-body
   [[args cnstr descr :as V]]
   (let [vargs? #{'&}
-        prep-args (if (some vargs? args)
-                    (with-meta
-                      (->> args (remove vargs?) vec)
-                      {::vargs true})
-                    args)
-        callsite (if (::vargs (meta prep-args))
-                   (list* `apply '?F prep-args)
-                   '(apply ?F ?ARGS))
         fun-name (gensym "fun")
         hocs (apply merge (map #(hash-map (:field %) %)
                                (filter hoc? (concat (:pre cnstr) (:post cnstr)))))
         cnstr {:pre  (vec (filter (complement hoc?) (:pre cnstr)))
-               :post (vec (filter (complement hoc?) (:post cnstr)))}]
+               :post (vec (filter (complement hoc?) (:post cnstr)))}
+        prep-args (prepare-args args hocs)
+        callsite (if (::vargs (meta prep-args))
+                   (list* `apply '?F prep-args)
+                   '(apply ?F ?ARGS))]
     (unify/subst
      '(?PARMS
        (let [ret ?PRE-CHECK]
