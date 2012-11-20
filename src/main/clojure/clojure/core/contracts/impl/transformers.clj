@@ -24,7 +24,7 @@
 
 (defmethod funcification/funcify* Hoc [e args] e)
 
-(def hoc? #(isa? Hoc %))
+(def hoc? #(= Hoc (type %)))
 
 (defn- tag-hocs
   [cnstr]
@@ -65,12 +65,13 @@
     '?BODY   body}))
 
 (comment
+ 
+  (build-contract-body
+   (build-constraints-description '[f n] '[number? (_ f [n] [odd?]) => pos?] "foo"))
+  
+  (build-contract-body
+   (build-constraints-description '[n] '[number? => odd?] "foo"))
 
-  (build-constraints-description '[n] '[odd? pos? => int?] "foo")
-  (build-constraints-description '[f n] '[(pos? n) (_ f [n] [number?]) => int?] "foo")
-
-  (build-contract-body '[[f n] [number? (_ f [n] [odd?]) => pos?] "foo"])
-  (build-contract-body '[[n] [number? => odd?] "foo"])
 )
 
 (defn- build-contract-body
@@ -84,7 +85,11 @@
         callsite (if (::vargs (meta prep-args))
                    (list* `apply '?F prep-args)
                    '(apply ?F ?ARGS))
-        fun-name (gensym "fun")]
+        fun-name (gensym "fun")
+        hocs (apply merge (map #(hash-map (:field %) %)
+                               (filter hoc? (concat (:pre cnstr) (:post cnstr)))))
+        cnstr {:pre  (vec (filter (complement hoc?) (:pre cnstr)))
+               :post (vec (filter (complement hoc?) (:post cnstr)))}]
     (unify/subst
      '(?PARMS
        (let [ret ?PRE-CHECK]
