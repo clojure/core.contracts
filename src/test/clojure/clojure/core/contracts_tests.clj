@@ -71,5 +71,15 @@
     (is (= -10 ((partial doubler-contract-no-requires #(* 2 %)) -5)))
     (is (thrown? Error ((partial doubler-contract-no-requires #(* 3 %)) 5)))))
 
+(deftest test-partial-contract-no-requires-and-isolated-fn
+  (let [doubler-contract-no-requires-and-isolated-fn
+        (contract doubler
+          "Test"
+          [x] [=> pos? (= (* 2 x) %)])]
+
+    (is (= 10 ((partial doubler-contract-no-requires-and-isolated-fn #(* 2 %)) 5)))
+    (is (thrown? Error ((partial doubler-contract-no-requires-and-isolated-fn #(* 2 %)) -5)))
+    (is (thrown? Error ((partial doubler-contract-no-requires-and-isolated-fn #(* 3 %)) 5)))))
+
 (deftest test-regressions
   (defer "regression testing"))
