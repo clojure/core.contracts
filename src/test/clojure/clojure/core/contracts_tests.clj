@@ -50,7 +50,7 @@
     (is (thrown? Error ((partial doubler-contract-arity1 #(* 3 %)) 5)))
     (is (thrown? Error ((partial doubler-contract-arity1 #(* 2 %)) -5)))))
 
-(deftest contract-arity1-and-isolated-fn
+(deftest test-contract-arity1-and-isolated-fn
   (let [doubler-contract-arity1-and-isolated-fn
         (contract doubler
           "Test"
@@ -60,6 +60,8 @@
     (is (= 10 ((partial doubler-contract-arity1-and-isolated-fn #(* 2 %)) 5)))
     (is (thrown? Error ((partial doubler-contract-arity1-and-isolated-fn #(* 3 %)) 5)))
     (is (thrown? Error ((partial doubler-contract-arity1-and-isolated-fn #(* 2 %)) -5)))))
+
+
 
 (deftest test-regressions
   (defer "regression testing"))
