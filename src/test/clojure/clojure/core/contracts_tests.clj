@@ -39,5 +39,24 @@
     (is (= 10 ((partial doubler-contract-full-and-isolated-fn #(* 2 %)) 5)))
     (is (thrown? Error ((partial doubler-contract-full-and-isolated-fn #(* 3 (+ %1 %2))) 2 3)))))
 
+(deftest test-contract-arity1
+  (let [doubler-contract-arity1
+        (contract doubler
+          "Test"
+          [x] [(pos? x) => (= (* 2 x) %)])]
+
+    (is (= 10 ((partial doubler-contract-arity1 #(* 2 %)) 5)))
+    (is (= 10 ((partial doubler-contract-arity1 #(* 2 %)) 5)))
+    (is (thrown? Error ((partial doubler-contract-arity1 #(* 3 %)) 5)))
+    (is (thrown? Error ((partial doubler-contract-arity1 #(* 2 %)) -5)))))
+
+(deftest contract-arity1-and-isolated-fn
+  (let [doubler-contract-arity1-and-isolated-fn
+        (contract doubler
+          "Test"
+          [x] [pos? => (= (* 2 x) %)])]
+
+    ))
+
 (deftest test-regressions
   (defer "regression testing"))
