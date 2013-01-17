@@ -59,7 +59,7 @@
     (not (<=> p q)))
 
 
-(defcurry-all clojure.core
+(defcurry-from clojure.core
   == = not=)
 
 (comment

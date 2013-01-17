@@ -41,7 +41,7 @@
   [name doc meta args & body]
   (do-curried name doc meta args body))
 
-(defmacro defcurry-all
+(defmacro defcurry-from
   "Builds a pass-through curried fn for each name."
   [namespace & names]
   (->> (for [n names]
@@ -55,13 +55,13 @@
 
 (comment
   (macroexpand
-   '(defcurry-all clojure.core
+   '(defcurry-from clojure.core
       == =))
 
-  
+
 
   ((== 1) 1)
-  
+
   (defcurried ===
     "test"
     {:added "1.5"}
