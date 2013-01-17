@@ -53,6 +53,16 @@
               (~v l# r#))))
        (cons `do)))
 
+(defn constraint?
+  "Determines if a symbol represents a
+  core.contracts constraint."
+  [sym]
+  (-> sym
+      resolve
+      meta
+      :clojure.core.contracts/original
+      boolean))
+
 (comment
   (macroexpand
    '(defcurry-from clojure.core
