@@ -1,6 +1,6 @@
 (ns clojure.core.contracts.constraints
   (:refer-clojure :exclude [== = not=])
-  (:use [clojure.core.contracts.impl.utils :only (defcurry-all)])
+  (:use [clojure.core.contracts.impl.utils :only (defcurry-from)])
   (:require [clojure.set  :as set]))
 
 ;; # constraint functions and multimethods
