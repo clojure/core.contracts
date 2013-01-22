@@ -1,0 +1,22 @@
+#+begin_html
+<div id="rinich"> 
+  <div class="log">
+    <div class="description">a contracts-programming library for <a href="http://clojure.org">Clojure</a></div>
+    <div class="item"> 
+        <h4>Contracts Programming</h4>            
+        <div class="citation"><p>the relationship between a class and
+        its clients as a formal agreement, expressing each party's
+        rights and obligations</p></div>
+        <div class="citation"><a href="http://en.wikipedia.org/wiki/Bertrand_Meyer">Bertrand Meyer</a></div> 
+      
+<!--        TODO TODO TODO
+<a class="more" href="http://fogus.me/fun/trammel/cp.html">read more</a>
+-->
+    </div>
+#+end_html
+
+
+
+#+begin_html
+    <div class="item"> 
+#+end_html
