@@ -4,11 +4,21 @@
 #+STYLE: <link rel="stylesheet" type="text/css" href="styles/default.css" />
 #+INCLUDE: header.org org
 
+First add the following to your [[https://github.com/technomancy/leiningen][Leiningen]] /project.clj/ file in the ~:dependencies~ section:
+
+#+begin_src clojure
+[org.clojure/core.contracts "0.0.1"]
+#+end_src
+
+To include core.contracts, add it to your namespace declaration:
+
 #+begin_src clojure
 (ns my.awesome.lib
   (require 
     [clojure.core.contracts :as contracts]))
 #+end_src
+
+Write your functions as you normally would:
 
 #+name: simple-example
 #+begin_src clojure :tangle ../examples/simple.clj :noweb yes 
@@ -21,7 +31,7 @@
 ;=> 0
 #+end_src
 
-
+Later, annotate your functions separately with the constraints:
 
 #+name: simple-example
 #+begin_src clojure :tangle ../examples/simple.clj :noweb yes 
@@ -30,7 +40,7 @@
     [x] [number? (not= 0 x) => number? pos?]))
 #+end_src
 
-
+The core.contracts validation will occur at run-time:
 
 #+begin_src clojure
 (sqr 10)
@@ -39,6 +49,12 @@
 (sqr 0)
 ; java.lang.AssertionError: 
 ;   Pre-condition failed: (not= 0 x)
+#+end_src
+
+To turn-off contracts for any given file, add the following to the top of the file in question before compiling:
+
+#+begin_src clojure
+(set! *assert* false)
 #+end_src
 
 
