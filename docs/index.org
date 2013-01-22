@@ -1,0 +1,55 @@
+#+TITLE: core.contracts
+#+AUTHOR: Fogus
+
+#+begin_html
+  <div id="rinich"> 
+    <div class="log">
+      <div class="item"> 
+#+end_html
+
+#+begin_src clojure
+(require '[clojure.core.contracts :as contracts])
+
+(defn sqr [n] (* n n))
+
+(sqr 10)
+;=> 100
+
+(sqr 0)
+;=> 0
+
+(contracts/provide 
+  (sqr "Constraints for squaring" 
+    [x] [number? (not= 0 x) => number? pos?]))
+
+(sqr 10)
+;=> 100
+
+(sqr 0)
+; java.lang.AssertionError: 
+;   Pre-condition failed: (not= 0 x)
+#+end_src
+
+
+
+
+#+begin_html
+    </div> 
+
+    <a class="button" href="http://github.com/clojure/core.contracts">source code &rarr;</a>
+    <a class="button" href="http://github.com/clojure/core.contracts/issues">tickets &rarr;</a>
+
+    <div class="footer">
+      &copy; 2010-2013 Michael Fogus <br/>
+      theme based on a design by <a href="http://rinich.tumblr.com">Rory Marinich</a>
+    </div> 
+  </div> 
+</div>
+#+end_html
+
+#+STYLE: <link rel="stylesheet" type="text/css" href="styles/default.css" />
+
+# Local Variables:
+# org-export-html-style-include-default: nil
+# org-export-html-style-include-scripts: nil
+# org-export-html-postamble: nil
