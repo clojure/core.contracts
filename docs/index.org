@@ -36,10 +36,8 @@
 #+begin_html
     </div> 
 
-    <a class="button" href="http://clojars.org/trammel">clojars &rarr;</a>
-    <a class="button" href="http://github.com/fogus/trammel">source code &rarr;</a>
-    <a class="button" href="http://github.com/fogus/trammel/issues">tickets &rarr;</a>
-    <a class="button" href="http://wiki.github.com/fogus/trammel">wiki &rarr;</a>
+    <a class="button" href="http://github.com/clojure/core.contracts">source code &rarr;</a>
+    <a class="button" href="http://github.com/clojure/core.contracts/issues">tickets &rarr;</a>
 
     <div class="footer">
       &copy; 2010-2013 Michael Fogus <br/>
