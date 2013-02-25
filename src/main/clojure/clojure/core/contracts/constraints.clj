@@ -107,3 +107,31 @@
        ~(str (:doc mdata))
        ~@body)))
 
+(defn- build-positional-factory
+  "Used to build a positional factory for a given type/record.  Because of the
+  limitation of 20 arguments to Clojure functions, this factory needs to be
+  constructed to deal with more arguments.  It does this by building a straight
+  forward type/record ctor call in the <=20 case, and a call to the same
+  ctor pulling the extra args out of the & overage parameter.  Finally, the
+  arity is constrained to the number of expected fields and an ArityException
+  will be thrown at runtime if the actual arg count does not match."
+  [nom classname fields invariants chk]
+  (let [fn-name (symbol (str '-> nom))
+        [field-args over] (split-at 20 fields)
+        field-count (count fields)
+        arg-count (count field-args)
+        over-count (count over)]
+    `(defconstrainedfn ~fn-name
+       [~@field-args ~@(if (seq over) '[& overage] [])]
+       ~invariants
+       (with-meta
+         ~(if (seq over)
+            `(if (= (count ~'overage) ~over-count)
+               (new ~nom
+                    ~@field-args
+                    ~@(for [i (range 0 (count over))]
+                        (list `nth 'overage i)))
+               (throw (clojure.lang.ArityException. (+ ~arg-count (count ~'overage)) (name '~fn-name))))
+            `(new ~nom ~@field-args))
+         {:contract ~chk}))))
+
