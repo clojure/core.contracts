@@ -135,3 +135,30 @@
             `(new ~nom ~@field-args))
          {:contract ~chk}))))
 
+(defmacro defconstrainedrecord
+  [name slots inv-description invariants & etc]
+  (let [fields       (vec slots)
+        ns-part (namespace-munge *ns*)
+        classname (symbol (str ns-part "." name))
+        ctor-name (symbol (str name \.))
+        positional-factory-name (symbol (str "->" name))
+        map-arrow-factory-name (symbol (str "map->" name))
+        chk `(contract ~(symbol (str "chk-" name))
+                       ~inv-description
+                       [{:keys ~fields :as m#}]
+                       ~invariants)]
+    `(do
+       (let [t# (defrecord ~name ~fields ~@etc)]
+         (defn ~(symbol (str name \?)) [r#]
+           (= t# (type r#))))
+
+       ~(build-positional-factory name classname fields invariants chk)
+
+       (defconstrainedfn ~map-arrow-factory-name
+         ([{:keys ~fields :as m#}]
+            ~invariants
+            (with-meta
+              (merge (new ~name ~@(for [e fields] nil)) m#)
+              {:contract ~chk})))
+       ~name)))
+
