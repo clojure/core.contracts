@@ -162,3 +162,23 @@
               {:contract ~chk})))
        ~name)))
 
+(defn- apply-contract
+  [f]
+  (if (:hooked (meta f))
+    f
+    (with-meta
+      (fn [m & args]
+        (if-let [contract (-> m meta :contract)]
+          ((partial contract identity) (apply f m args))
+          (apply f m args)))
+      {:hooked true})))
+
+(when *assert*
+  (alter-var-root (var assoc) apply-contract)
+  (alter-var-root (var dissoc) apply-contract)
+  (alter-var-root (var merge) apply-contract)
+  (alter-var-root (var merge-with) (fn [f] (let [mw (apply-contract f)] (fn [f & maps] (apply mw f maps)))))
+  (alter-var-root (var into) apply-contract)
+  (alter-var-root (var conj) apply-contract)
+  (alter-var-root (var assoc-in) apply-contract)
+  (alter-var-root (var update-in) apply-contract))
