@@ -85,7 +85,9 @@
        (map (fn [arg]
               (if-let [hoc (get hocs arg)]
                 (list `partial (list* `fn (build-contract-body (:desc hoc))) arg)
-                arg))
+                (if (map? arg)
+                  (:as arg)
+                  arg)))
             (->> args (remove vargs?))))
       {::vargs has-vargs})))
 
