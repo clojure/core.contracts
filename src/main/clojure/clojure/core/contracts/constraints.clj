@@ -137,7 +137,7 @@
 
 (defmacro defconstrainedrecord
   [name slots inv-description invariants & etc]
-  (let [fields       (vec slots)
+  (let [fields (vec slots)
         ns-part (namespace-munge *ns*)
         classname (symbol (str ns-part "." name))
         ctor-name (symbol (str name \.))
@@ -171,7 +171,8 @@
         (if-let [contract (and m (-> m meta :contract))]
           ((partial contract identity) (apply f m args))
           (apply f m args)))
-      {:hooked true})))
+      {:hooked true
+       :original f})))
 
 (when *assert*
   (alter-var-root (var assoc) apply-contract)
