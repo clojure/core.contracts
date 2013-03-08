@@ -7,7 +7,7 @@
 First add the following to your [[https://github.com/technomancy/leiningen][Leiningen]] /project.clj/ file in the ~:dependencies~ section:
 
 #+begin_src clojure
-[org.clojure/core.contracts "0.0.1"]
+[org.clojure/core.contracts "0.0.4"]
 #+end_src
 
 To include core.contracts, add it to your namespace declaration:
