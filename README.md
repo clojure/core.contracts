@@ -11,7 +11,7 @@ Based on [Trammel](http://github.com/fogus/trammel) and [clojure-contracts](http
 Releases and Dependency Information
 ========================================
 
-Latest stable release: 0.0.1
+Latest stable release: 0.0.4
 
 * [All Released Versions](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.clojure%22%20AND%20a%3A%22core.cache%22)
 
@@ -19,14 +19,14 @@ Latest stable release: 0.0.1
 
 [Leiningen](https://github.com/technomancy/leiningen) dependency information:
 
-    [org.clojure/core.contracts "0.0.1"]
+    [org.clojure/core.contracts "0.0.4"]
 
 [Maven](http://maven.apache.org/) dependency information:
 
     <dependency>
       <groupId>org.clojure</groupId>
       <artifactId>core.contracts</artifactId>
-      <version>0.0.1</version>
+      <version>0.0.4</version>
     </dependency>
 
 
@@ -71,6 +71,9 @@ Developer Information
 Change Log
 ====================
 
+* Release 0.0.4 on 2013.03.07
+  * Rolled in `defconstrainedrecord`
+  * Rolled in associative checks
 * Release 0.0.1 on 2012.06.01
   * Rolled in `contract`, `with-constraints` and `provide` from Trammel
 
