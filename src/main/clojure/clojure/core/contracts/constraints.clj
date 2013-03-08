@@ -2,6 +2,7 @@
   (:refer-clojure :exclude [== = not=])
   (:use [clojure.core.contracts.impl.utils :only (defcurry-from)])
   (:require [clojure.set  :as set]
+            clojure.core.contracts
             clojure.core.contracts.impl.transformers))
 
 ;; # constraint functions and multimethods
