@@ -1,4 +1,4 @@
-(defproject core.contracts "0.0.3-SNAPSHOT"
+(defproject core.contracts "0.0.5-SNAPSHOT"
   :description "Contracts programming for Clojure."
   :dependencies [[org.clojure/clojure "1.5.0"]
                  [org.clojure/core.unify "0.5.3"]]
