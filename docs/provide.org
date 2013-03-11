@@ -1,8 +1,4 @@
----
-title: Trammel - Applying Contracts to Existing Functions
----
-
-While defining contracts local to the constrained function is nice (see [`defconstrainedfn`](../defconstrainedfn/) for more information), very often you will find yourself in possession of an existing function that is not constrained:
+While defining contracts local to the constrained function is nice (see [[../defconstrainedfn/][defconstrainedfn]] for more information), very often you will find yourself in possession of an existing function that is not constrained:
 
 <div class="gist">
      <div class="gist-file">
@@ -40,4 +36,5 @@ As shown, the `sqr` function is dynamically modified with the contract defined i
 
 `provide-contracts` gives you a lot of flexibilty in how to separate functions from their contracts and likewise apply them in domain-specific ways.
 
-[return to documentation](../docs.html)
+[[../docs.html][return to documentation]]
+
