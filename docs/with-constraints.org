@@ -1,8 +1,6 @@
----
-title: Trammel - Applying Contracts Manually
----
+* with-constraints
 
-Trammel's `with-constraints` macro takes a function followed by one or more contracts and returns a new function that is the amalgamation of them all:
+core.contracts's ~with-constraints~ macro takes a function followed by one or more contracts and returns a new function that is the amalgamation of them all:
 
 <div class="gist">
      <div class="gist-file">
@@ -14,6 +12,6 @@ Trammel's `with-constraints` macro takes a function followed by one or more cont
      </div>
 </div>
 
-See the docs of [`contract`](../contract/) for more detail.
+See the docs of [[./contract/][contract]] for more detail.
 
-[return to documentation](../docs.html)
+[[../docs.html][return to documentation]]
