@@ -1,3 +1,5 @@
+* provide
+
 While defining contracts local to the constrained function is nice (see [[../defconstrainedfn/][defconstrainedfn]] for more information), very often you will find yourself in possession of an existing function that is not constrained:
 
 <div class="gist">
@@ -10,7 +12,7 @@ While defining contracts local to the constrained function is nice (see [[../def
      </div>
 </div>
 
-In this case, Trammel provides the `provide-contracts` macro to define contracts and apply them dynamically to existing functions:
+In this case, core.contracts provides the ~provide-contracts~ macro to define contracts and apply them dynamically to existing functions:
 
 <div class="gist">
      <div class="gist-file">
@@ -22,7 +24,7 @@ In this case, Trammel provides the `provide-contracts` macro to define contracts
      </div>
 </div>
 
-As shown, the `sqr` function is dynamically modified with the contract defined in the body of `provide-contracts`.  This macro can take any number of vectors where each corresponds to a contract for a given function; including multiple arities embedded within.  Trammel also allows you to include existing *named* contracts (see [`defcontract`](../defcontract/) for more information) instead of the contract specification vector, as shown below:
+As shown, the ~sqr~ function is dynamically modified with the contract defined in the body of ~provide-contracts~.  This macro can take any number of vectors where each corresponds to a contract for a given function; including multiple arities embedded within.  core.contracts also allows you to include existing *named* contracts (see [[./defcontract/][defcontract]] for more information) instead of the contract specification vector, as shown below:
 
 <div class="gist">
      <div class="gist-file">
@@ -34,7 +36,7 @@ As shown, the `sqr` function is dynamically modified with the contract defined i
      </div>
 </div>
 
-`provide-contracts` gives you a lot of flexibilty in how to separate functions from their contracts and likewise apply them in domain-specific ways.
+~provide-contracts~ gives you a lot of flexibilty in how to separate functions from their contracts and likewise apply them in domain-specific ways.
 
 [[../docs.html][return to documentation]]
 

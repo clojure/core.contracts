@@ -1,5 +1,4 @@
-clojure.core.contracts references
-=================================
+* clojure.core.contracts references
 
 - *[A Proof Engine for Eiffel](http://tecomp.sourceforge.net/index.php?file=doc/papers/proof/engine)*
 - *[An Axiomatic Basis for Computer Programming](http://citeseer.ist.psu.edu/viewdoc/summary?doi=10.1.1.116.2392)* by C.A.R Hoare -- essential reading

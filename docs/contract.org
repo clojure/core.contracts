@@ -1,8 +1,6 @@
----
-title: Trammel - Isolated Unnamed Contracts
----
+* contract
 
-As you saw in the description of [`defconstrainedfn`](../defconstrainedfn/) Trammel allows you to create functions with a localized and dependent contract.  However, there may be circumstances where the separation of contract and constrained function is preferred.  Take for example, a simple `slope` function:
+As you saw in the description of [[./defconstrainedfn][defconstrainedfn]] core.contracts allows you to create functions with a localized and dependent contract.  However, there may be circumstances where the separation of contract and constrained function is preferred.  Take for example, a simple ~slope~ function:
 
 <div class="gist">
   <div class="gist-file">
@@ -26,7 +24,7 @@ Defining a separate contract for this function is a simple matter:
   </div>
 </div>
 
-We can then define a constrained version of `sqr` using Trammel's [`with-constraints`](../with-constraints/) macro:
+We can then define a constrained version of ~sqr~ using core.contracts's [[../with-constraints/][with-constraints]] macro:
 
 <div class="gist">
   <div class="gist-file">
@@ -38,7 +36,7 @@ We can then define a constrained version of `sqr` using Trammel's [`with-constra
   </div>
 </div>
 
-However, this constraint definition for `sqr`, while accurate, is very broad.  In fact, the software team developing software for the 8-bit Atari console would not be able to use `constrained-sqr` as it is far too liberal.  Therefore, they can define their own contract that further constrains `constrained-sqr`:
+However, this constraint definition for ~sqr~, while accurate, is very broad.  In fact, the software team developing software for the 8-bit Atari console would not be able to use ~constrained-sqr~ as it is far too liberal.  Therefore, they can define their own contract that further constrains ~constrained-sqr~:
 
 <div class="gist">
   <div class="gist-file">
@@ -62,10 +60,10 @@ And all appears to be in order -- except:
   </div>
 </div>
 
-That is, calling the function `sqr-8bit` with `100` causes a *post-condition* failure!  The reason for this is because the underlying `sqr` is the same old arbitrary-precision version when what we really want is a function that deals in only 8-bit values.  There are two possible ways to do this:
+That is, calling the function ~sqr-8bit~ with ~100~ causes a *post-condition* failure!  The reason for this is because the underlying ~sqr~ is the same old arbitrary-precision version when what we really want is a function that deals in only 8-bit values.  There are two possible ways to do this:
 
-1. Create a version of `sqr-8bit` that does in fact deal in 8-bit values
-2. Tighten the constraint on `constrained-sqr` further by applying another contract
+1. Create a version of ~sqr-8bit~ that does in fact deal in 8-bit values
+2. Tighten the constraint on ~constrained-sqr~ further by applying another contract
 
 <div class="gist">
   <div class="gist-file">
@@ -77,6 +75,7 @@ That is, calling the function `sqr-8bit` with `100` causes a *post-condition* fa
   </div>
 </div>
 
-Using `contract` and `with-constraints` you were able to tighten the constraints on both the pre- and post-conditions of the `sqr` function.  However, what if you wanted to relax the requirements?  Stay tuned.
+Using ~contract~ and ~with-constraints~ you were able to tighten the constraints on both the pre- and post-conditions of the ~sqr~ function.  However, what if you wanted to relax the requirements?  Stay tuned.
 
-[return to documentation](../docs.html)
+[[../docs.html][return to documentation]]
+
