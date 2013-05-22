@@ -7,13 +7,13 @@
    :doc
    "The public contracts programming functions and macros for clojure.core.contracts."}
   {:source-url
-   "https://github.com/clojure/core.contracts/blob/1bcd09d89857fc1eafd57a574f30b8cf74f12e55/src/main/clojure/clojure/core/contracts/constraints.clj",
+   "https://github.com/clojure/core.contracts/blob/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj",
    :wiki-url
    "http://clojure.github.com/core.contracts/clojure.core.contracts.constraints-api.html",
    :name "clojure.core.contracts.constraints",
    :doc nil}
   {:source-url
-   "https://github.com/clojure/core.contracts/blob/66fbe3d77ca27d4d5b20b43f391180360c67171d/src/main/clojure/clojure/core/contracts/impl/transformers.clj",
+   "https://github.com/clojure/core.contracts/blob/18c2ec806daa1cb22416e2a81faa24595761ecb8/src/main/clojure/clojure/core/contracts/impl/transformers.clj",
    :wiki-url
    "http://clojure.github.com/core.contracts/clojure.core.contracts.impl.transformers-api.html",
    :name "clojure.core.contracts.impl.transformers",
@@ -57,155 +57,155 @@
    :name "<-",
    :namespace "clojure.core.contracts.constraints",
    :source-url
-   "https://github.com/clojure/core.contracts/blob/1bcd09d89857fc1eafd57a574f30b8cf74f12e55/src/main/clojure/clojure/core/contracts/constraints.clj#L41",
+   "https://github.com/clojure/core.contracts/blob/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj#L42",
    :raw-source-url
-   "https://github.com/clojure/core.contracts/raw/1bcd09d89857fc1eafd57a574f30b8cf74f12e55/src/main/clojure/clojure/core/contracts/constraints.clj",
+   "https://github.com/clojure/core.contracts/raw/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj",
    :wiki-url
    "http://clojure.github.com/core.contracts//clojure.core.contracts-api.html#clojure.core.contracts.constraints/<-",
    :doc "Converse implication",
    :var-type "function",
-   :line 41,
+   :line 42,
    :file "src/main/clojure/clojure/core/contracts/constraints.clj"}
   {:arglists ([p q]),
    :name "<=>",
    :namespace "clojure.core.contracts.constraints",
    :source-url
-   "https://github.com/clojure/core.contracts/blob/1bcd09d89857fc1eafd57a574f30b8cf74f12e55/src/main/clojure/clojure/core/contracts/constraints.clj#L51",
+   "https://github.com/clojure/core.contracts/blob/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj#L52",
    :raw-source-url
-   "https://github.com/clojure/core.contracts/raw/1bcd09d89857fc1eafd57a574f30b8cf74f12e55/src/main/clojure/clojure/core/contracts/constraints.clj",
+   "https://github.com/clojure/core.contracts/raw/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj",
    :wiki-url
    "http://clojure.github.com/core.contracts//clojure.core.contracts-api.html#clojure.core.contracts.constraints/<=>",
    :doc "Logical equality",
    :var-type "function",
-   :line 51,
+   :line 52,
    :file "src/main/clojure/clojure/core/contracts/constraints.clj"}
-  {:arglists ([l__945__auto__] [l__945__auto__ r__946__auto__]),
+  {:arglists ([l__781__auto__] [l__781__auto__ r__782__auto__]),
    :name "=",
    :namespace "clojure.core.contracts.constraints",
    :source-url
-   "https://github.com/clojure/core.contracts/blob/1bcd09d89857fc1eafd57a574f30b8cf74f12e55/src/main/clojure/clojure/core/contracts/constraints.clj#L63",
+   "https://github.com/clojure/core.contracts/blob/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj#L64",
    :raw-source-url
-   "https://github.com/clojure/core.contracts/raw/1bcd09d89857fc1eafd57a574f30b8cf74f12e55/src/main/clojure/clojure/core/contracts/constraints.clj",
+   "https://github.com/clojure/core.contracts/raw/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj",
    :wiki-url
    "http://clojure.github.com/core.contracts//clojure.core.contracts-api.html#clojure.core.contracts.constraints/=",
    :doc "Curried version of #'clojure.core/=",
    :var-type "function",
-   :line 63,
+   :line 64,
    :file "src/main/clojure/clojure/core/contracts/constraints.clj"}
-  {:arglists ([l__945__auto__] [l__945__auto__ r__946__auto__]),
+  {:arglists ([l__781__auto__] [l__781__auto__ r__782__auto__]),
    :name "==",
    :namespace "clojure.core.contracts.constraints",
    :source-url
-   "https://github.com/clojure/core.contracts/blob/1bcd09d89857fc1eafd57a574f30b8cf74f12e55/src/main/clojure/clojure/core/contracts/constraints.clj#L63",
+   "https://github.com/clojure/core.contracts/blob/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj#L64",
    :raw-source-url
-   "https://github.com/clojure/core.contracts/raw/1bcd09d89857fc1eafd57a574f30b8cf74f12e55/src/main/clojure/clojure/core/contracts/constraints.clj",
+   "https://github.com/clojure/core.contracts/raw/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj",
    :wiki-url
    "http://clojure.github.com/core.contracts//clojure.core.contracts-api.html#clojure.core.contracts.constraints/==",
    :doc "Curried version of #'clojure.core/==",
    :var-type "function",
-   :line 63,
+   :line 64,
    :file "src/main/clojure/clojure/core/contracts/constraints.clj"}
   {:arglists ([name & body]),
    :name "defconstrainedfn",
    :namespace "clojure.core.contracts.constraints",
    :source-url
-   "https://github.com/clojure/core.contracts/blob/1bcd09d89857fc1eafd57a574f30b8cf74f12e55/src/main/clojure/clojure/core/contracts/constraints.clj#L78",
+   "https://github.com/clojure/core.contracts/blob/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj#L79",
    :raw-source-url
-   "https://github.com/clojure/core.contracts/raw/1bcd09d89857fc1eafd57a574f30b8cf74f12e55/src/main/clojure/clojure/core/contracts/constraints.clj",
+   "https://github.com/clojure/core.contracts/raw/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj",
    :wiki-url
    "http://clojure.github.com/core.contracts//clojure.core.contracts-api.html#clojure.core.contracts.constraints/defconstrainedfn",
    :doc
    "Defines a function using the `contract` vector appearing after the arguments.\n\n     (defconstrainedfn sqr\n       [n] [number? (not= 0 n) => pos? number?]\n       (* n n))\n\n Like the `contract` macro, multiple arity functions can be defined where each argument vector\n is immediately followed by the relevent arity expectations.  This macro will also detect\n if a map is in that constraints position and use that instead under the assumption that\n Clojure's `:pre`/`:post` map is used instead.\n",
    :var-type "macro",
-   :line 78,
+   :line 79,
    :file "src/main/clojure/clojure/core/contracts/constraints.clj"}
   {:arglists ([p q]),
    :name "except",
    :namespace "clojure.core.contracts.constraints",
    :source-url
-   "https://github.com/clojure/core.contracts/blob/1bcd09d89857fc1eafd57a574f30b8cf74f12e55/src/main/clojure/clojure/core/contracts/constraints.clj#L46",
+   "https://github.com/clojure/core.contracts/blob/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj#L47",
    :raw-source-url
-   "https://github.com/clojure/core.contracts/raw/1bcd09d89857fc1eafd57a574f30b8cf74f12e55/src/main/clojure/clojure/core/contracts/constraints.clj",
+   "https://github.com/clojure/core.contracts/raw/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj",
    :wiki-url
    "http://clojure.github.com/core.contracts//clojure.core.contracts-api.html#clojure.core.contracts.constraints/except",
    :doc "P except Q",
    :var-type "function",
-   :line 46,
+   :line 47,
    :file "src/main/clojure/clojure/core/contracts/constraints.clj"}
   {:arglists ([p q]),
    :name "implies",
    :namespace "clojure.core.contracts.constraints",
    :source-url
-   "https://github.com/clojure/core.contracts/blob/1bcd09d89857fc1eafd57a574f30b8cf74f12e55/src/main/clojure/clojure/core/contracts/constraints.clj#L36",
+   "https://github.com/clojure/core.contracts/blob/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj#L37",
    :raw-source-url
-   "https://github.com/clojure/core.contracts/raw/1bcd09d89857fc1eafd57a574f30b8cf74f12e55/src/main/clojure/clojure/core/contracts/constraints.clj",
+   "https://github.com/clojure/core.contracts/raw/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj",
    :wiki-url
    "http://clojure.github.com/core.contracts//clojure.core.contracts-api.html#clojure.core.contracts.constraints/implies",
    :doc "Logical implication",
    :var-type "function",
-   :line 36,
+   :line 37,
    :file "src/main/clojure/clojure/core/contracts/constraints.clj"}
   {:arglists ([e & args]),
    :name "in",
    :namespace "clojure.core.contracts.constraints",
    :source-url
-   "https://github.com/clojure/core.contracts/blob/1bcd09d89857fc1eafd57a574f30b8cf74f12e55/src/main/clojure/clojure/core/contracts/constraints.clj#L14",
+   "https://github.com/clojure/core.contracts/blob/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj#L15",
    :raw-source-url
-   "https://github.com/clojure/core.contracts/raw/1bcd09d89857fc1eafd57a574f30b8cf74f12e55/src/main/clojure/clojure/core/contracts/constraints.clj",
+   "https://github.com/clojure/core.contracts/raw/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj",
    :wiki-url
    "http://clojure.github.com/core.contracts//clojure.core.contracts-api.html#clojure.core.contracts.constraints/in",
    :doc
    "Takes an item and determines if it falls in the listed args.  This can be\nused most effectively for numbers since any numbers in a vector represent\na range of values determined by the same arguments as given to `range`.",
    :var-type "function",
-   :line 14,
+   :line 15,
    :file "src/main/clojure/clojure/core/contracts/constraints.clj"}
-  {:arglists ([l__945__auto__] [l__945__auto__ r__946__auto__]),
+  {:arglists ([l__781__auto__] [l__781__auto__ r__782__auto__]),
    :name "not=",
    :namespace "clojure.core.contracts.constraints",
    :source-url
-   "https://github.com/clojure/core.contracts/blob/1bcd09d89857fc1eafd57a574f30b8cf74f12e55/src/main/clojure/clojure/core/contracts/constraints.clj#L63",
+   "https://github.com/clojure/core.contracts/blob/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj#L64",
    :raw-source-url
-   "https://github.com/clojure/core.contracts/raw/1bcd09d89857fc1eafd57a574f30b8cf74f12e55/src/main/clojure/clojure/core/contracts/constraints.clj",
+   "https://github.com/clojure/core.contracts/raw/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj",
    :wiki-url
    "http://clojure.github.com/core.contracts//clojure.core.contracts-api.html#clojure.core.contracts.constraints/not=",
    :doc "Curried version of #'clojure.core/not=",
    :var-type "function",
-   :line 63,
+   :line 64,
    :file "src/main/clojure/clojure/core/contracts/constraints.clj"}
   {:arglists ([wl things]),
    :name "whitelist",
    :namespace "clojure.core.contracts.constraints",
    :source-url
-   "https://github.com/clojure/core.contracts/blob/1bcd09d89857fc1eafd57a574f30b8cf74f12e55/src/main/clojure/clojure/core/contracts/constraints.clj#L29",
+   "https://github.com/clojure/core.contracts/blob/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj#L30",
    :raw-source-url
-   "https://github.com/clojure/core.contracts/raw/1bcd09d89857fc1eafd57a574f30b8cf74f12e55/src/main/clojure/clojure/core/contracts/constraints.clj",
+   "https://github.com/clojure/core.contracts/raw/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj",
    :wiki-url
    "http://clojure.github.com/core.contracts//clojure.core.contracts-api.html#clojure.core.contracts.constraints/whitelist",
    :doc
    "Takes a thing with keys (i.e. maps or sets) and checks if it contains only\nthe keys listed in the given whitelist.",
    :var-type "function",
-   :line 29,
+   :line 30,
    :file "src/main/clojure/clojure/core/contracts/constraints.clj"}
   {:arglists ([p q]),
    :name "xor",
    :namespace "clojure.core.contracts.constraints",
    :source-url
-   "https://github.com/clojure/core.contracts/blob/1bcd09d89857fc1eafd57a574f30b8cf74f12e55/src/main/clojure/clojure/core/contracts/constraints.clj#L57",
+   "https://github.com/clojure/core.contracts/blob/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj#L58",
    :raw-source-url
-   "https://github.com/clojure/core.contracts/raw/1bcd09d89857fc1eafd57a574f30b8cf74f12e55/src/main/clojure/clojure/core/contracts/constraints.clj",
+   "https://github.com/clojure/core.contracts/raw/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj",
    :wiki-url
    "http://clojure.github.com/core.contracts//clojure.core.contracts-api.html#clojure.core.contracts.constraints/xor",
    :doc "Exclusive or",
    :var-type "function",
-   :line 57,
+   :line 58,
    :file "src/main/clojure/clojure/core/contracts/constraints.clj"}
   {:arglists ([field desc]),
    :name "->Hoc",
    :namespace "clojure.core.contracts.impl.transformers",
    :source-url
-   "https://github.com/clojure/core.contracts/blob/66fbe3d77ca27d4d5b20b43f391180360c67171d/src/main/clojure/clojure/core/contracts/impl/transformers.clj#L24",
+   "https://github.com/clojure/core.contracts/blob/18c2ec806daa1cb22416e2a81faa24595761ecb8/src/main/clojure/clojure/core/contracts/impl/transformers.clj#L24",
    :raw-source-url
-   "https://github.com/clojure/core.contracts/raw/66fbe3d77ca27d4d5b20b43f391180360c67171d/src/main/clojure/clojure/core/contracts/impl/transformers.clj",
+   "https://github.com/clojure/core.contracts/raw/18c2ec806daa1cb22416e2a81faa24595761ecb8/src/main/clojure/clojure/core/contracts/impl/transformers.clj",
    :wiki-url
    "http://clojure.github.com/core.contracts//clojure.core.contracts-api.html#clojure.core.contracts.impl.transformers/->Hoc",
    :doc
@@ -214,13 +214,13 @@
    :line 24,
    :file
    "src/main/clojure/clojure/core/contracts/impl/transformers.clj"}
-  {:arglists ([m__5828__auto__]),
+  {:arglists ([m__5818__auto__]),
    :name "map->Hoc",
    :namespace "clojure.core.contracts.impl.transformers",
    :source-url
-   "https://github.com/clojure/core.contracts/blob/66fbe3d77ca27d4d5b20b43f391180360c67171d/src/main/clojure/clojure/core/contracts/impl/transformers.clj#L24",
+   "https://github.com/clojure/core.contracts/blob/18c2ec806daa1cb22416e2a81faa24595761ecb8/src/main/clojure/clojure/core/contracts/impl/transformers.clj#L24",
    :raw-source-url
-   "https://github.com/clojure/core.contracts/raw/66fbe3d77ca27d4d5b20b43f391180360c67171d/src/main/clojure/clojure/core/contracts/impl/transformers.clj",
+   "https://github.com/clojure/core.contracts/raw/18c2ec806daa1cb22416e2a81faa24595761ecb8/src/main/clojure/clojure/core/contracts/impl/transformers.clj",
    :wiki-url
    "http://clojure.github.com/core.contracts//clojure.core.contracts-api.html#clojure.core.contracts.impl.transformers/map->Hoc",
    :doc
