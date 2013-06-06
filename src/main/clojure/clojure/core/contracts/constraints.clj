@@ -144,15 +144,16 @@
         ctor-name (symbol (str name \.))
         positional-factory-name (symbol (str "->" name))
         map-arrow-factory-name (symbol (str "map->" name))
+        pred-arg (gensym)
         chk `(clojure.core.contracts/contract
                 ~(symbol (str "chk-" name))
                 ~inv-description
                 [{:keys ~fields :as m#}]
                 ~invariants)]
     `(do
-       (let [t# (defrecord ~name ~fields ~@etc)]
-         (defn ~(symbol (str name \?)) [r#]
-           (= t# (type r#))))
+       (defrecord ~name ~fields ~@etc)
+       (defn ~(symbol (str name \?)) [~pred-arg]
+         (instance? ~name ~pred-arg))
 
        ~(build-positional-factory name classname fields invariants chk)
 
