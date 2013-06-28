@@ -7,7 +7,7 @@
    :doc
    "The public contracts programming functions and macros for clojure.core.contracts."}
   {:source-url
-   "https://github.com/clojure/core.contracts/blob/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj",
+   "https://github.com/clojure/core.contracts/blob/6af4be591211946909102051413b09d19e5a0126/src/main/clojure/clojure/core/contracts/constraints.clj",
    :wiki-url
    "http://clojure.github.com/core.contracts/clojure.core.contracts.constraints-api.html",
    :name "clojure.core.contracts.constraints",
@@ -57,9 +57,9 @@
    :name "<-",
    :namespace "clojure.core.contracts.constraints",
    :source-url
-   "https://github.com/clojure/core.contracts/blob/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj#L42",
+   "https://github.com/clojure/core.contracts/blob/6af4be591211946909102051413b09d19e5a0126/src/main/clojure/clojure/core/contracts/constraints.clj#L42",
    :raw-source-url
-   "https://github.com/clojure/core.contracts/raw/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj",
+   "https://github.com/clojure/core.contracts/raw/6af4be591211946909102051413b09d19e5a0126/src/main/clojure/clojure/core/contracts/constraints.clj",
    :wiki-url
    "http://clojure.github.com/core.contracts//clojure.core.contracts-api.html#clojure.core.contracts.constraints/<-",
    :doc "Converse implication",
@@ -70,9 +70,9 @@
    :name "<=>",
    :namespace "clojure.core.contracts.constraints",
    :source-url
-   "https://github.com/clojure/core.contracts/blob/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj#L52",
+   "https://github.com/clojure/core.contracts/blob/6af4be591211946909102051413b09d19e5a0126/src/main/clojure/clojure/core/contracts/constraints.clj#L52",
    :raw-source-url
-   "https://github.com/clojure/core.contracts/raw/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj",
+   "https://github.com/clojure/core.contracts/raw/6af4be591211946909102051413b09d19e5a0126/src/main/clojure/clojure/core/contracts/constraints.clj",
    :wiki-url
    "http://clojure.github.com/core.contracts//clojure.core.contracts-api.html#clojure.core.contracts.constraints/<=>",
    :doc "Logical equality",
@@ -83,9 +83,9 @@
    :name "=",
    :namespace "clojure.core.contracts.constraints",
    :source-url
-   "https://github.com/clojure/core.contracts/blob/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj#L64",
+   "https://github.com/clojure/core.contracts/blob/6af4be591211946909102051413b09d19e5a0126/src/main/clojure/clojure/core/contracts/constraints.clj#L64",
    :raw-source-url
-   "https://github.com/clojure/core.contracts/raw/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj",
+   "https://github.com/clojure/core.contracts/raw/6af4be591211946909102051413b09d19e5a0126/src/main/clojure/clojure/core/contracts/constraints.clj",
    :wiki-url
    "http://clojure.github.com/core.contracts//clojure.core.contracts-api.html#clojure.core.contracts.constraints/=",
    :doc "Curried version of #'clojure.core/=",
@@ -96,9 +96,9 @@
    :name "==",
    :namespace "clojure.core.contracts.constraints",
    :source-url
-   "https://github.com/clojure/core.contracts/blob/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj#L64",
+   "https://github.com/clojure/core.contracts/blob/6af4be591211946909102051413b09d19e5a0126/src/main/clojure/clojure/core/contracts/constraints.clj#L64",
    :raw-source-url
-   "https://github.com/clojure/core.contracts/raw/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj",
+   "https://github.com/clojure/core.contracts/raw/6af4be591211946909102051413b09d19e5a0126/src/main/clojure/clojure/core/contracts/constraints.clj",
    :wiki-url
    "http://clojure.github.com/core.contracts//clojure.core.contracts-api.html#clojure.core.contracts.constraints/==",
    :doc "Curried version of #'clojure.core/==",
@@ -109,9 +109,9 @@
    :name "defconstrainedfn",
    :namespace "clojure.core.contracts.constraints",
    :source-url
-   "https://github.com/clojure/core.contracts/blob/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj#L79",
+   "https://github.com/clojure/core.contracts/blob/6af4be591211946909102051413b09d19e5a0126/src/main/clojure/clojure/core/contracts/constraints.clj#L79",
    :raw-source-url
-   "https://github.com/clojure/core.contracts/raw/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj",
+   "https://github.com/clojure/core.contracts/raw/6af4be591211946909102051413b09d19e5a0126/src/main/clojure/clojure/core/contracts/constraints.clj",
    :wiki-url
    "http://clojure.github.com/core.contracts//clojure.core.contracts-api.html#clojure.core.contracts.constraints/defconstrainedfn",
    :doc
@@ -123,9 +123,9 @@
    :name "except",
    :namespace "clojure.core.contracts.constraints",
    :source-url
-   "https://github.com/clojure/core.contracts/blob/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj#L47",
+   "https://github.com/clojure/core.contracts/blob/6af4be591211946909102051413b09d19e5a0126/src/main/clojure/clojure/core/contracts/constraints.clj#L47",
    :raw-source-url
-   "https://github.com/clojure/core.contracts/raw/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj",
+   "https://github.com/clojure/core.contracts/raw/6af4be591211946909102051413b09d19e5a0126/src/main/clojure/clojure/core/contracts/constraints.clj",
    :wiki-url
    "http://clojure.github.com/core.contracts//clojure.core.contracts-api.html#clojure.core.contracts.constraints/except",
    :doc "P except Q",
@@ -136,9 +136,9 @@
    :name "implies",
    :namespace "clojure.core.contracts.constraints",
    :source-url
-   "https://github.com/clojure/core.contracts/blob/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj#L37",
+   "https://github.com/clojure/core.contracts/blob/6af4be591211946909102051413b09d19e5a0126/src/main/clojure/clojure/core/contracts/constraints.clj#L37",
    :raw-source-url
-   "https://github.com/clojure/core.contracts/raw/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj",
+   "https://github.com/clojure/core.contracts/raw/6af4be591211946909102051413b09d19e5a0126/src/main/clojure/clojure/core/contracts/constraints.clj",
    :wiki-url
    "http://clojure.github.com/core.contracts//clojure.core.contracts-api.html#clojure.core.contracts.constraints/implies",
    :doc "Logical implication",
@@ -149,9 +149,9 @@
    :name "in",
    :namespace "clojure.core.contracts.constraints",
    :source-url
-   "https://github.com/clojure/core.contracts/blob/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj#L15",
+   "https://github.com/clojure/core.contracts/blob/6af4be591211946909102051413b09d19e5a0126/src/main/clojure/clojure/core/contracts/constraints.clj#L15",
    :raw-source-url
-   "https://github.com/clojure/core.contracts/raw/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj",
+   "https://github.com/clojure/core.contracts/raw/6af4be591211946909102051413b09d19e5a0126/src/main/clojure/clojure/core/contracts/constraints.clj",
    :wiki-url
    "http://clojure.github.com/core.contracts//clojure.core.contracts-api.html#clojure.core.contracts.constraints/in",
    :doc
@@ -163,9 +163,9 @@
    :name "not=",
    :namespace "clojure.core.contracts.constraints",
    :source-url
-   "https://github.com/clojure/core.contracts/blob/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj#L64",
+   "https://github.com/clojure/core.contracts/blob/6af4be591211946909102051413b09d19e5a0126/src/main/clojure/clojure/core/contracts/constraints.clj#L64",
    :raw-source-url
-   "https://github.com/clojure/core.contracts/raw/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj",
+   "https://github.com/clojure/core.contracts/raw/6af4be591211946909102051413b09d19e5a0126/src/main/clojure/clojure/core/contracts/constraints.clj",
    :wiki-url
    "http://clojure.github.com/core.contracts//clojure.core.contracts-api.html#clojure.core.contracts.constraints/not=",
    :doc "Curried version of #'clojure.core/not=",
@@ -176,9 +176,9 @@
    :name "whitelist",
    :namespace "clojure.core.contracts.constraints",
    :source-url
-   "https://github.com/clojure/core.contracts/blob/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj#L30",
+   "https://github.com/clojure/core.contracts/blob/6af4be591211946909102051413b09d19e5a0126/src/main/clojure/clojure/core/contracts/constraints.clj#L30",
    :raw-source-url
-   "https://github.com/clojure/core.contracts/raw/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj",
+   "https://github.com/clojure/core.contracts/raw/6af4be591211946909102051413b09d19e5a0126/src/main/clojure/clojure/core/contracts/constraints.clj",
    :wiki-url
    "http://clojure.github.com/core.contracts//clojure.core.contracts-api.html#clojure.core.contracts.constraints/whitelist",
    :doc
@@ -190,9 +190,9 @@
    :name "xor",
    :namespace "clojure.core.contracts.constraints",
    :source-url
-   "https://github.com/clojure/core.contracts/blob/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj#L58",
+   "https://github.com/clojure/core.contracts/blob/6af4be591211946909102051413b09d19e5a0126/src/main/clojure/clojure/core/contracts/constraints.clj#L58",
    :raw-source-url
-   "https://github.com/clojure/core.contracts/raw/9a75e63d60c8252a90e64349b608e67c2cd111bd/src/main/clojure/clojure/core/contracts/constraints.clj",
+   "https://github.com/clojure/core.contracts/raw/6af4be591211946909102051413b09d19e5a0126/src/main/clojure/clojure/core/contracts/constraints.clj",
    :wiki-url
    "http://clojure.github.com/core.contracts//clojure.core.contracts-api.html#clojure.core.contracts.constraints/xor",
    :doc "Exclusive or",
