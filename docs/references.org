@@ -10,8 +10,8 @@
 - [[http://onestepback.org/index.cgi/Tech/Programming/DbcAndTesting.html][Design by Contract and Unit Testing]]
 - [[http://split-s.blogspot.com/2006/02/design-by-contract-for-ruby.html][Design by contract for Ruby]]
 - [[http://www.amazon.com/dp/0132479257][Eiffel: The Language]] by Bertrand Meyer
-- *[Fortress Language Specification](http://labs.oracle.com/projects/plrg/fortress.pdf)* (PDF) by Guy L. Steele Jr., et al.
-- *[How to Deign Programs](http://htdp.org/)* by Matthias Felleisen, Robert Bruce Findler, Matthew Flatt, and Shriram Krishnamurthi [here](http://www.htdp.org/2003-09-26/Book/)
-- *[Jass - Java with Assertions](http://www.eecs.northwestern.edu/~robby/contract-reading-list/jass.pdf)* (PDF) by Detlef Bartetzko, Clemens Fischer, Michael Moller and Heike Wehrheim
-- *[Object-oriented Software Construction](ttp://www.amazon.com/dp/0136291554)* by Bertrand Meyer
-- *[System.Diagnostics.Contracts](http://msdn.microsoft.com/en-us/library/system.diagnostics.contracts.aspx)*
+- [[http://labs.oracle.com/projects/plrg/fortress.pdf][Fortress Language Specification]] (PDF) by Guy L. Steele Jr., et al.
+- [[http://htdp.org/][How to Deign Programs]] by Matthias Felleisen, Robert Bruce Findler, Matthew Flatt, and Shriram Krishnamurthi [here](http://www.htdp.org/2003-09-26/Book/)
+- [[http://www.eecs.northwestern.edu/~robby/contract-reading-list/jass.pdf][Jass - Java with Assertions]] (PDF) by Detlef Bartetzko, Clemens Fischer, Michael Moller and Heike Wehrheim
+- [[http://www.amazon.com/dp/0136291554][Object-oriented Software Construction]] by Bertrand Meyer
+- [[http://msdn.microsoft.com/en-us/library/system.diagnostics.contracts.aspx][System.Diagnostics.Contracts]]
