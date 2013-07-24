@@ -2,39 +2,43 @@
 
 As you saw in the description of [[./defconstrainedfn][defconstrainedfn]] core.contracts allows you to create functions with a localized and dependent contract.  However, there may be circumstances where the separation of contract and constrained function is preferred.  Take for example, a simple ~slope~ function:
 
-<div class="gist">
-  <div class="gist-file">
-    <div class="gist-data gist-syntax">
-      <div class="gist-highlight">
-<pre><div class="line" id="LC1"><span class="p">(</span><span class="k">defn </span><span class="nv">sqr</span> <span class="p">[</span><span class="nv">n</span><span class="p">]</span> <span class="p">(</span><span class="nb">* </span><span class="nv">n</span> <span class="nv">n</span><span class="p">))</span></div></pre>
-      </div>
-    </div>
-  </div>
-</div>
+#+begin_src clojure
+(defn sqr [n] (* n n))
+#+end_src
 
 Defining a separate contract for this function is a simple matter:
 
-<div class="gist">
-  <div class="gist-file">
-    <div class="gist-data gist-syntax">
-      <div class="gist-highlight">
-<pre><div class="line" id="LC1"><span class="p">(</span><span class="k">def </span><span class="nv">sqr-contract</span></div><div class="line" id="LC2">&nbsp;&nbsp;<span class="p">(</span><span class="nf">contract</span> <span class="nv">sqr-constraints</span></div><div class="line" id="LC3">&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">"Defines the constraints for squaring"</span></div><div class="line" id="LC4">&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">[</span><span class="nv">n</span><span class="p">]</span> <span class="p">[</span><span class="nv">number?</span> <span class="p">(</span><span class="nb">not= </span><span class="mi">0</span> <span class="nv">n</span><span class="p">)</span> <span class="nv">=&gt;</span> <span class="nv">pos?</span> <span class="nv">number?</span><span class="p">]))</span></div></pre>
-      </div>
-    </div>
-  </div>
-</div>
+#+begin_src clojure
+(def sqr-contract
+  (contract sqr-constraints
+    "Defines the constraints for squaring"
+    [n] [number? (not= 0 n) => pos? number?]))
+#+end_src
 
 We can then define a constrained version of ~sqr~ using core.contracts's [[../with-constraints/][with-constraints]] macro:
 
-<div class="gist">
-  <div class="gist-file">
-    <div class="gist-data gist-syntax">
-      <div class="gist-highlight">
-<pre><div class="line" id="LC1"><span class="p">(</span><span class="k">def </span><span class="nv">constrained-sqr</span> </div><div class="line" id="LC2">&nbsp;&nbsp;<span class="p">(</span><span class="nf">with-constraints</span></div><div class="line" id="LC3">&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">sqr</span></div><div class="line" id="LC4">&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">sqr-contract</span><span class="p">))</span></div><div class="line" id="LC5"><br/></div><div class="line" id="LC6"><span class="p">(</span><span class="nf">constrained-sqr</span> <span class="mi">5</span><span class="p">)</span></div><div class="line" id="LC7"><span class="c1">;=&gt; 25</span></div><div class="line" id="LC8"><br/></div><div class="line" id="LC9"><span class="p">(</span><span class="nf">constrained-sqr</span> <span class="mi">-5</span><span class="p">)</span></div><div class="line" id="LC10"><span class="c1">;=&gt; 25</span></div><div class="line" id="LC11"><br/></div><div class="line" id="LC12"><span class="p">(</span><span class="nf">constrained-sqr</span> <span class="mi">0</span><span class="p">)</span></div><div class="line" id="LC13"><span class="c1">; java.lang.AssertionError: Assert failed: <br/>    (not= 0 num)</span></div><div class="line" id="LC14"><br/></div><div class="line" id="LC15"><span class="p">(</span><span class="nf">constrained-sqr</span> <span class="nv">:a</span><span class="p">)</span></div><div class="line" id="LC16"><span class="c1">; java.lang.AssertionError: Assert failed: <br/>    (number? num)</span></div></pre>
-      </div>
-    </div>
-  </div>
-</div>
+#+begin_src clojure
+(def constrained-sqr 
+  (with-constraints
+    sqr
+    sqr-contract))
+#+end_src
+
+And it's use is as follows:
+
+#+begin_src clojure
+(constrained-sqr 5)
+;;=> 25
+
+(constrained-sqr -5)
+;;=> 25
+
+(constrained-sqr 0)
+;; java.lang.AssertionError: Assert failed: (not= 0 num)
+
+(constrained-sqr :a)
+;; java.lang.AssertionError: Assert failed: (number? num)
+#+end_src
 
 However, this constraint definition for ~sqr~, while accurate, is very broad.  In fact, the software team developing software for the 8-bit Atari console would not be able to use ~constrained-sqr~ as it is far too liberal.  Therefore, they can define their own contract that further constrains ~constrained-sqr~:
 
