@@ -1,7 +1,7 @@
 * clojure.core.contracts references
 
-- *[A Proof Engine for Eiffel](http://tecomp.sourceforge.net/index.php?file=doc/papers/proof/engine)*
-- *[An Axiomatic Basis for Computer Programming](http://citeseer.ist.psu.edu/viewdoc/summary?doi=10.1.1.116.2392)* by C.A.R Hoare -- essential reading
+- [[http://tecomp.sourceforge.net/index.php?file=doc/papers/proof/engine][A Proof Engine for Eiffel]]
+- [[http://citeseer.ist.psu.edu/viewdoc/summary?doi=10.1.1.116.2392][An Axiomatic Basis for Computer Programming]] by C.A.R Hoare -- essential reading
 - *[Behavioral Software Contracts](http://eecs.northwestern.edu/~robby/pubs/papers/behavioral-software-contracts.pdf)* (PDF) by Robert Bruce Findler
 - *[Contract Programming in D](http://www.digitalmars.com/d/2.0/dbc.html)* 
 - *[Contract Soundness for Object-Oriented Languages](http://www.ccs.neu.edu/scheme/pubs/oopsla01-ff.pdf)* by Robert Bruce Findler and Matthias Felleisen
