@@ -53,7 +53,12 @@ Example Usage
 
 Refer to docstrings in the `clojure.core.contracts` namespace.
 
+Documentation
+========================================
 
+[core.contracts API](http://clojure.github.io/core.contracts/)
+
+See also the [wiki](/clojure/core.contracts/wiki) for some documentation and examples.
 
 Developer Information
 ========================================
