@@ -3,10 +3,10 @@ clojure.core.contracts
 
 Contracts programming for Clojure.
 
-In progress.
-
 Based on [Trammel](http://github.com/fogus/trammel) and [clojure-contracts](http://github.com/dnaumov/clojure-contracts).
 
+In progress. Please consider using Trammel, which, at the moment, has more
+features and is better documented.
 
 Releases and Dependency Information
 ========================================
@@ -36,7 +36,7 @@ Example Usage
 
 ```clojure
     (use 'clojure.core.contracts)
-	
+
 	(def secure-doubler
 	  (with-constraints
 	  	(fn [n] (* 2 n))
