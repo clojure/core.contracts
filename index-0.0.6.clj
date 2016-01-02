@@ -87,7 +87,7 @@
    "https://github.com/clojure/core.contracts/blob/6af4be591211946909102051413b09d19e5a0126/src/main/clojure/clojure/core/contracts/constraints.clj#L64",
    :line 64,
    :var-type "function",
-   :arglists ([l__918__auto__] [l__918__auto__ r__919__auto__]),
+   :arglists ([l#] [l# r#]),
    :doc "Curried version of #'clojure.core/=",
    :namespace "clojure.core.contracts.constraints",
    :wiki-url
@@ -100,7 +100,7 @@
    "https://github.com/clojure/core.contracts/blob/6af4be591211946909102051413b09d19e5a0126/src/main/clojure/clojure/core/contracts/constraints.clj#L64",
    :line 64,
    :var-type "function",
-   :arglists ([l__918__auto__] [l__918__auto__ r__919__auto__]),
+   :arglists ([l#] [l# r#]),
    :doc "Curried version of #'clojure.core/==",
    :namespace "clojure.core.contracts.constraints",
    :wiki-url
@@ -167,7 +167,7 @@
    "https://github.com/clojure/core.contracts/blob/6af4be591211946909102051413b09d19e5a0126/src/main/clojure/clojure/core/contracts/constraints.clj#L64",
    :line 64,
    :var-type "function",
-   :arglists ([l__918__auto__] [l__918__auto__ r__919__auto__]),
+   :arglists ([l#] [l# r#]),
    :doc "Curried version of #'clojure.core/not=",
    :namespace "clojure.core.contracts.constraints",
    :wiki-url
@@ -223,7 +223,7 @@
    "https://github.com/clojure/core.contracts/blob/18c2ec806daa1cb22416e2a81faa24595761ecb8/src/main/clojure/clojure/core/contracts/impl/transformers.clj#L24",
    :line 24,
    :var-type "function",
-   :arglists ([m__5818__auto__]),
+   :arglists ([m#]),
    :doc
    "Factory function for class clojure.core.contracts.impl.transformers.Hoc, taking a map of keywords to field values.",
    :namespace "clojure.core.contracts.impl.transformers",
@@ -232,6 +232,7 @@
   {:name "Hoc",
    :var-type "record",
    :namespace "clojure.core.contracts.impl.transformers",
+   :arglists nil,
    :wiki-url
    "http://clojure.github.com/core.contracts//clojure.core.contracts-api.html#clojure.core.contracts.impl.transformers/Hoc",
    :source-url nil,
