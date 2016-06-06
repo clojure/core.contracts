@@ -2,26 +2,25 @@
  ({:doc
    "The public contracts programming functions and macros for clojure.core.contracts.",
    :name "clojure.core.contracts",
-   :wiki-url
-   "http://clojure.github.io/core.contracts/clojure.core.contracts-api.html",
+   :wiki-url "http://clojure.github.io/core.contracts/index.html",
    :source-url
    "https://github.com/clojure/core.contracts/blob/66fbe3d77ca27d4d5b20b43f391180360c67171d/src/main/clojure/clojure/core/contracts.clj"}
   {:doc nil,
    :name "clojure.core.contracts.constraints",
    :wiki-url
-   "http://clojure.github.io/core.contracts/clojure.core.contracts-api.html#clojure.core.contracts.constraints",
+   "http://clojure.github.io/core.contracts/index.html#clojure.core.contracts.constraints",
    :source-url
    "https://github.com/clojure/core.contracts/blob/6af4be591211946909102051413b09d19e5a0126/src/main/clojure/clojure/core/contracts/constraints.clj"}
   {:doc nil,
    :name "clojure.core.contracts.impl.transformers",
    :wiki-url
-   "http://clojure.github.io/core.contracts/clojure.core.contracts-api.html#clojure.core.contracts.impl.transformers",
+   "http://clojure.github.io/core.contracts/index.html#clojure.core.contracts.impl.transformers",
    :source-url
    "https://github.com/clojure/core.contracts/blob/18c2ec806daa1cb22416e2a81faa24595761ecb8/src/main/clojure/clojure/core/contracts/impl/transformers.clj"}
   {:doc nil,
    :name "clojure.core.contracts.impl.utils",
    :wiki-url
-   "http://clojure.github.io/core.contracts/clojure.core.contracts-api.html#clojure.core.contracts.impl.utils",
+   "http://clojure.github.io/core.contracts/index.html#clojure.core.contracts.impl.utils",
    :source-url
    "https://github.com/clojure/core.contracts/blob/fc6b92fbb9e061f105cb90092934aba1608e1945/src/main/clojure/clojure/core/contracts/impl/utils.clj"}),
  :vars
