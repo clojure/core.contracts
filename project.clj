@@ -1,7 +1,7 @@
 (defproject core.contracts "0.0.5-SNAPSHOT"
   :description "Contracts programming for Clojure."
   :dependencies [[org.clojure/clojure "1.5.1"]
-                 [org.clojure/core.unify "0.5.3"]]
+                 [org.clojure/core.unify "0.5.7"]]
   :plugins [[lein-swank "1.4.4"]
             [lein-marginalia "0.7.1"]]
   :profiles {:1.2   {:dependencies [[org.clojure/clojure "1.2.0"]]}
