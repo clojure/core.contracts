@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>core.contracts</artifactId>
-  <version>0.0.6</version>
+  <version>0.0.7-SNAPSHOT</version>
   <name>${artifactId}</name>
   <description>A contracts programming library for Clojure</description>
   <packaging>jar</packaging>
@@ -40,7 +40,7 @@
   <scm>
     <connection>scm:git:git://github.com/clojure/core.contracts.git</connection>
     <url>http://github.com/clojure/core.contracts</url>
-    <tag>core.contracts-0.0.6</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <repositories>
