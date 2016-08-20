@@ -11,7 +11,7 @@ Based on [Trammel](http://github.com/fogus/trammel) and [clojure-contracts](http
 Releases and Dependency Information
 ========================================
 
-Latest stable release: 0.0.5
+Latest stable release: 0.0.6
 
 * [All Released Versions](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.clojure%22%20AND%20a%3A%22core.cache%22)
 
@@ -19,14 +19,14 @@ Latest stable release: 0.0.5
 
 [Leiningen](https://github.com/technomancy/leiningen) dependency information:
 
-    [org.clojure/core.contracts "0.0.5"]
+    [org.clojure/core.contracts "0.0.6"]
 
 [Maven](http://maven.apache.org/) dependency information:
 
     <dependency>
       <groupId>org.clojure</groupId>
       <artifactId>core.contracts</artifactId>
-      <version>0.0.5</version>
+      <version>0.0.6</version>
     </dependency>
 
 
@@ -76,6 +76,8 @@ Developer Information
 Change Log
 ====================
 
+* Release 0.0.6 on 2016.08.20
+  * Bump dependency on newest version of core.unify, which fixes a compilation problem with Clojure 1.9.0-alpha11
 * Release 0.0.5 on 2013.06.28
   * Speedier constrained record perf.
 * Release 0.0.4 on 2013.03.07
