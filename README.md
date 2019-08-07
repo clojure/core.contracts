@@ -3,7 +3,7 @@ clojure.core.contracts
 
 Contracts programming for Clojure.
 
-In progress.
+Project status: [Inactive](https://clojure.org/community/contrib_libs). The author (fogus) considers this library to have been superseded by [clojure.spec](https://github.com/clojure/spec.alpha).
 
 Based on [Trammel](http://github.com/fogus/trammel) and [clojure-contracts](http://github.com/dnaumov/clojure-contracts).
 
