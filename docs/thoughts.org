@@ -1,0 +1,22 @@
+* core.contracts
+
+/A library to foster contracts programming in Clojure and ClojureScript/
+
+** Goals
+
+- Leverage Spec to provide a set of utiltities and usage patterns
+
+** References / Influences
+
+- TODO
+
+** Tasks
+
+*** TODO Remove old Trammel-inspired code.
+
+
+
+
+
+
+
