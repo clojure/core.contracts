@@ -17,6 +17,11 @@ Latest stable release: 0.0.6
 
 * [Development Snapshot Versions](https://oss.sonatype.org/index.html#nexus-search;gav~org.clojure~core.contracts~~~)
 
+[CLI/`deps.edn`](https://clojure.org/reference/deps_and_cli) dependency information:
+```clojure
+org.clojure/core.contracts {:mvn/version "0.0.6"}
+```
+
 [Leiningen](https://github.com/technomancy/leiningen) dependency information:
 
     [org.clojure/core.contracts "0.0.6"]
