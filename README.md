@@ -5,33 +5,33 @@ Contracts programming for Clojure.
 
 Project status: [Inactive](https://clojure.org/community/contrib_libs). The author (fogus) considers this library to have been superseded by [clojure.spec](https://github.com/clojure/spec.alpha).
 
-Based on [Trammel](http://github.com/fogus/trammel) and [clojure-contracts](http://github.com/dnaumov/clojure-contracts).
+Based on [Trammel](https://github.com/fogus/trammel) and [clojure-contracts](https://github.com/dnaumov/clojure-contracts).
 
 
 Releases and Dependency Information
 ========================================
 
-Latest stable release: 0.0.6
+Latest stable release: 0.0.7
 
-* [All Released Versions](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.clojure%22%20AND%20a%3A%22core.contracts%22)
+* [All Released Versions](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.clojure%22%20AND%20a%3A%22core.contracts%22)
 
 * [Development Snapshot Versions](https://oss.sonatype.org/index.html#nexus-search;gav~org.clojure~core.contracts~~~)
 
 [CLI/`deps.edn`](https://clojure.org/reference/deps_and_cli) dependency information:
 ```clojure
-org.clojure/core.contracts {:mvn/version "0.0.6"}
+org.clojure/core.contracts {:mvn/version "0.0.7"}
 ```
 
 [Leiningen](https://github.com/technomancy/leiningen) dependency information:
 
-    [org.clojure/core.contracts "0.0.6"]
+    [org.clojure/core.contracts "0.0.7"]
 
 [Maven](http://maven.apache.org/) dependency information:
 
     <dependency>
       <groupId>org.clojure</groupId>
       <artifactId>core.contracts</artifactId>
-      <version>0.0.6</version>
+      <version>0.0.7</version>
     </dependency>
 
 
@@ -76,6 +76,8 @@ Developer Information
 Change Log
 ====================
 
+* Release 0.0.7 on 2026.01.02
+  * Update to latest parent pom
 * Release 0.0.6 on 2016.08.20
   * Bump dependency on newest version of core.unify, which fixes a compilation problem with Clojure 1.9.0-alpha11
 * Release 0.0.5 on 2013.06.28
